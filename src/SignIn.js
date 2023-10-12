@@ -17,6 +17,11 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { useCookies } from 'react-cookie';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import { InputAdornment } from '@mui/material';
+import IconButton from '@mui/material/IconButton';
+
 
 function Copyright(props) {
   return (
@@ -52,7 +57,10 @@ export default function SignIn() {
   // class component มี setState
   let [password, setPassword] = useState('');
   let [cookies, setCookie] = useCookies(['token']);
-
+  let [ hide, setHide ] = useState(true);
+  const togglePasswordVisibility = () => {
+    setHide(!hide);
+  };
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
@@ -85,21 +93,35 @@ export default function SignIn() {
               onChange = {(e) => {
                 setUsername(e.target.value);
               }}
+              
             />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-              value = {password}
-                onChange = {(e) => {
-                    setPassword(e.target.value);
-                }}
-            />
+           <TextField
+  margin="normal"
+  required
+  fullWidth
+  name="password"
+  label="Password"
+  type={hide ? 'password' : 'text'} // Change the type dynamically
+  id="password"
+  autoComplete="current-password"
+  value={password}
+  onChange={(e) => {
+    setPassword(e.target.value);
+  }}
+  InputProps={{
+    startAdornment: (
+      <InputAdornment position="start">
+        <IconButton onClick={togglePasswordVisibility} edge="start">
+          {hide ? <VisibilityIcon /> : <VisibilityOffIcon />}
+        </IconButton>
+      </InputAdornment>
+    ),
+  }}
+/>
+
+
+           
+            
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
@@ -131,12 +153,12 @@ export default function SignIn() {
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link href="#" variant="body2">
+                <Link href="/resetPassword" variant="body2">
                   Forgot password?
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="/signUp" variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>

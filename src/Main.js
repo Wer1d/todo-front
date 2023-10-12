@@ -1,7 +1,7 @@
+import MaterialTable from "material-table";
+
 export default function Main() {    
     return (
-        <div>
-            <h1>Main</h1>
-        </div>
+        <a href="/signout">Sign Out</a>
     );
 }
