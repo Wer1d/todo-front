@@ -1,6 +1,6 @@
 import {Routes, Route } from 'react-router-dom';
 import './index.css';
-import './SignIn';
+import SignOut from './SignOut';
 import SignIn from './SignIn';
 import Main from './pages/home/Main.js';
 import Credit from './credit';
