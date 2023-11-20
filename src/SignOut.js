@@ -9,5 +9,5 @@ export default function SignOut() {
         removeCookie('token');
         navigate('/signin');
     }, []);
-    return <div>hi</div>;
+    return <div></div>;
 }

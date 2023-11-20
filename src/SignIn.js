@@ -96,32 +96,29 @@ export default function SignIn() {
               
             />
            <TextField
-  margin="normal"
-  required
-  fullWidth
-  name="password"
-  label="Password"
-  type={hide ? 'password' : 'text'} // Change the type dynamically
-  id="password"
-  autoComplete="current-password"
-  value={password}
-  onChange={(e) => {
-    setPassword(e.target.value);
-  }}
-  InputProps={{
-    startAdornment: (
-      <InputAdornment position="start">
-        <IconButton onClick={togglePasswordVisibility} edge="start">
-          {hide ? <VisibilityIcon /> : <VisibilityOffIcon />}
-        </IconButton>
-      </InputAdornment>
-    ),
-  }}
-/>
+            margin="normal"
+            required
+            fullWidth
+            name="password"
+            label="Password"
+            type={hide ? 'password' : 'text'} // Change the type dynamically
+            id="password"
+            autoComplete="current-password"
+            value={password}
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <IconButton onClick={togglePasswordVisibility} edge="start">
+                    {hide ? <VisibilityIcon /> : <VisibilityOffIcon />}
+                  </IconButton>
+                </InputAdornment>
+              ),
+            }}
+          />
 
-
-           
-            
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
@@ -149,7 +146,7 @@ export default function SignIn() {
               }}
             
             >
-              Sign In
+            Sign In
             </Button>
             <Grid container>
               <Grid item xs>
