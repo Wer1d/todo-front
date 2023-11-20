@@ -1,0 +1,38 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+.container {
+    background-color: rgb(126, 30, 30);
+    width: 1000px;
+    height: auto;
+    margin: 80px 150px 10px 300px;
+    
+
+}
+
+.row {
+    width: 500px;
+    margin-left: 200px;
+     
+    background-color: rgb(255, 255, 255);
+}
+
+#inputtask{
+    flex:1;
+    margin-right: 50px;
+    margin-left: 20px;
+    outline: none;
+    border: none;
+}
+
+#inputdate{
+    flex:1;
+    margin-right: 50px;
+    outline: none;
+    border: none;
+}

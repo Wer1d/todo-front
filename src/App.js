@@ -2,8 +2,9 @@ import {Routes, Route } from 'react-router-dom';
 import './index.css';
 import SignOut from './SignOut';
 import SignIn from './SignIn';
-import Main from './Main';
-import ResetPassword from './resetPassword';
+import Main from './pages/home/Main.js';
+import Credit from './credit';
+
 
 function App() {
   return (
@@ -11,8 +12,8 @@ function App() {
       <Route path="/" element={<SignIn/>} />
       <Route path="/signin" element={<SignIn/>} />
       <Route path="/main" element={<Main/>} />
-      <Route path="/signout" element={<SignOut/>} /> 
-      <Route path='/resetpassword' element={<ResetPassword/>} />
+      <Route path="/credit" element={<Credit/>} />
+      {/* <Route path="/signout" element={<SignOut/>} /> */}
     </Routes>
   );
 }
